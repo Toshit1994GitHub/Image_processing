@@ -155,7 +155,7 @@ class E_Invoicing_pdf(Resource):
                 
                 if final_result !=0:
                 
-                    sql = "insert into API_consume_log(consume_by, session_id, output_data,input_data,is_mob_app) values (?, ?, ?, ?, ?)"
+                    sql = "insert into API_consume_log(consume_by, session_id, output_data,input_data,is_mob_app) values (?, ?, ?, ?, ?)" # Save all record in data base
                     cursor.execute(sql, (consume_by, session_id, out,b64,0))
                     cursor.commit()
                 
