@@ -66,8 +66,8 @@ class E_Invoicing_pdf(Resource):
                 f.write(bytes)
                 f.close()
                 #Read all pdf file and save as a Image
-                #images=convert_from_path("D:\\Toshit SVN VScan Backup\\file.pdf") # Development Location
-                images=convert_from_path("D:\\Webservices\\python_E_Invoicing_UAT\\file.pdf") # Server Location
+               
+                images=convert_from_path("File location") 
         #%%        
                 out_put=[]
                 counts=-1
@@ -77,9 +77,7 @@ class E_Invoicing_pdf(Resource):
                     fname = "image" + str(i) + ".png"
                     image.save(fname, "PNG")   # image will be saved in virtual enviroment
                     # Reagd and decode image from virtual enviroment
-                    #aa=("D:/Toshit SVN VScan Backup/image"+st+".png") # Far api input # Development Location
-                    #aa=("C:/Users/toshit.maurya/image"+st+".png")  # Local input # Development Location
-                    aa=("D:\\Webservices\\python_E_Invoicing_UAT\\image"+st+".png")  #server Location
+                    aa=("image location"+st+".png")  #server Location
                     
                     a=decode(Image.open(aa))  # Decode QR Code 
                     #print("a value",a)
@@ -89,8 +87,7 @@ class E_Invoicing_pdf(Resource):
                             out_put.append(a)
                         file = ("image"+st+".png")
                         # File location 
-                        #location = "D:/Toshit SVN VScan Backup" # For API use Virtual environment  Development Location
-                        location = "D:\\Webservices\\python_E_Invoicing_UAT" # Server Location
+                        location = "Save image location" 
                         # Path 
                         path = os.path.join(location, file) 
                         os.remove(path)
